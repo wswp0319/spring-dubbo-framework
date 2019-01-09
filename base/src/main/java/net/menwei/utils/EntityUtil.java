@@ -50,12 +50,12 @@ public class EntityUtil {
     private final String controller_package = "net.menwei.controller";
 
     private final String driverName = "com.mysql.jdbc.Driver";
-//    private final String user = "root";
-//    private final String password = "admin";
-    private final String user = "hqcx_lyds_a_708";
-    private final String password = "G61sCc0vSA0GrS3g";
+    private final String user = "root";
+    private final String password = "123456";
+//    private final String user = "hqcx_lyds_a_708";
+//    private final String password = "G61sCc0vSA0GrS3g";
 
-    private final String url = "jdbc:mysql://192.168.1.211:3306/" + moduleName + "?characterEncoding=utf8";
+    private final String url = "jdbc:mysql://localhost:3306/" + moduleName + "?characterEncoding=utf8";
     private String tableName = null;
     private String beanName = null;
     private String mapperName = null;
