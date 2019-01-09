@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.menwei.mapper.ModeMapper">
+
+	<!-- 字段-->
+	<!-- 查询（根据主键ID查询） -->
+	<select id="selInfo" resultType="modeDto">
+		 SELECT
+		 <include refid="sqlColumns" />
+		 FROM tb_mode
+		 WHERE id = #{id}
+	</select>
+
+	<!--删除：根据主键ID删除-->
+	<delete id="del" parameterType="modeDto">
+		 DELETE FROM tb_mode
+		 WHERE id = #{id}
+	</delete>
+
+	<!-- 添加 -->
+	<insert id="add" parameterType="modeDto" keyColumn="id" useGeneratedKeys="true">
+		 INSERT INTO tb_mode
+ 			(
+ 			id,
+			mode
+ 			) 
+		 VALUES 
+ 			(
+ 			#{id},
+			#{mode}
+ 			) 
+	</insert>
+
+	<!-- 修 改-->
+	<update id="edit" parameterType="modeDto">
+		 UPDATE tb_mode
+ 		 <trim prefix="SET" suffixOverrides=","> 
+			<if test="mode != null">mode = #{mode},</if>
+ 		 </trim>
+		 WHERE id = #{id}
+	</update>
+
+	<sql id="sqlColumns">
+    	id id, 
+    	mode mode    
+	</sql>
+
+	<!-- 条件-->
+	<sql id="sqlWhere">
+    	<where>
+	    	<if test="id != null"> and id = #{id}</if> 
+        	<if test="mode != null"> and mode = #{mode}</if> 
+    	</where>
+	</sql>
+
+	<select id="count" resultType="int">
+		 SELECT
+		 count(id)
+		 FROM tb_mode
+		 <include refid="sqlWhere"/>
+	</select>
+
+	<select id="list" resultType="modeDto">
+		 SELECT
+		 <include refid="sqlColumns"/>
+		 FROM tb_mode
+		 <include refid="sqlWhere"/>
+	</select>
+
+	<select id="queryPage" resultType="modeDto">
+		 SELECT
+		 <include refid="sqlColumns"/>
+		 FROM tb_mode
+		 <include refid="sqlWhere"/>
+	</select>
+
+</mapper>

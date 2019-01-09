@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: hqmc-system
+  redis:
+    database: 0
+    host: @redis.host@
+    port: @redis.port@
+    password: @redis.password@
+    timeout: @redis.timeout@
+    jedis:
+      pool:
+        max-wait: -1
+        max-idle: 10
+  data:
+    elasticsearch:
+      clusterName: cluster210
+      clusterNodes: 192.168.1.210:9300
+  datasource:
+    url: @mysql.url@
+    username: @mysql.username@
+    password: @mysql.password@
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    minIdle: 5
+    maxActive: 100
+    initialSize: 10
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: true
+    filters: stat
+    cachePrepStmts: true  # 开启二级缓存
+
+server:
+  port: @server.port@
+
+dubbo:
+  scan:
+    basePackages: net.menwei
+  application:
+    id: hqmc-system
+    name: hqmc-system
+  protocol:
+    id: dubbo
+    name: dubbo
+  registry:
+    id: my-registry
+    address: @registry.address@
+#  monitor:
+#    protocol: registry
+  consumer:
+    check: false
+
+mybatis:
+  type-aliases-package: net.menwei.domain
+  type-handlers-package: net.menwei.typehandler
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    cache-enabled: true

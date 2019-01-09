@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: hqmc-api
+
+server:
+  port: @server.port@
+
+dubbo:
+  application:
+    id: hqmc-api
+    name: hqmc-api
+  protocol:
+    id: dubbo
+    name: dubbo
+  registry:
+    address: @registry.address@
+  consumer:
+    check: false
