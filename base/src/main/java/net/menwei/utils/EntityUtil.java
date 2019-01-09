@@ -35,13 +35,13 @@ public class EntityUtil {
 
     private final String moduleName = "test"; // 对应模块名称（根据自己模块做相应调整!!!务必修改^_^）
 
-    private final String bean_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\domain";
-    private final String mapper_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\mapper";
-    private final String xml_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\mapper";
+    private final String bean_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\domain";
+    private final String mapper_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\mapper";
+    private final String xml_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\mapper";
 
-    private final String service_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\service";
-    private final String service_impl_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\service\\impl";
-    private final String controller_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\com\\jmhqmc\\controller";
+    private final String service_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\service";
+    private final String service_impl_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\service\\impl";
+    private final String controller_path = "D:\\JetBrains\\framework\\base\\src\\main\\java\\net\\menwei\\controller";
 
     private final String bean_package = "net.menwei.domain";
     private final String mapper_package = "net.menwei.mapper";
